@@ -73,3 +73,38 @@ button:hover {
     font-size: 0.9em;
   }
 }
+/* Basic styles for Tic Tac Toe game */
+.game {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.status {
+  margin-bottom: 20px;
+  font-size: 1.5em;
+}
+
+.board-row {
+  display: flex;
+}
+
+.cell {
+  width: 100px;
+  height: 100px;
+  background-color: #fff;
+  border: 1px solid #999;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 2em;
+  cursor: pointer;
+}
+
+.cell:hover {
+  background-color: #e0e0e0;
+}
+
+.cell:active {
+  background-color: #d0d0d0;
+}
