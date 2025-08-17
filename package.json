@@ -1,0 +1,16 @@
+{
+  "name": "ticktacktoe",
+  "version": "1.0.0",
+  "description": "A simple Tic Tac Toe game",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js",
+    "test": "jest"
+  },
+  "keywords": ["tic", "tac", "toe", "game"],
+  "author": "Your Name",
+  "license": "MIT",
+  "devDependencies": {
+    "jest": "^29.7.0"
+  }
+}
