@@ -1,17 +1,19 @@
 import React, { useState } from 'react';
+import { getCurrentState, updateState, resetState } from '../gameState.js';
 
 const App = () => {
-  const [board, setBoard] = useState(Array(9).fill(null));
+  const [board, setBoard] = useState(getCurrentState().flat());
   const [isXNext, setIsXNext] = useState(true);
 
   const handleClick = (index) => {
-    const squares = board.slice();
+    const squares = getCurrentState().flat();
     if (calculateWinner(squares) || squares[index]) {
       return;
     }
-    squares[index] = isXNext ? 'X' : 'O';
-    setBoard(squares);
-    setIsXNext(!isXNext);
+    if (updateState(Math.floor(index / 3), index % 3, isXNext ? 'X' : 'O')) {
+      setBoard(getCurrentState().flat());
+      setIsXNext(!isXNext);
+    }
   };
 
   const renderSquare = (index) => (
@@ -20,7 +22,7 @@ const App = () => {
     </button>
   );
 
-  const winner = calculateWinner(board);
+  const winner = calculateWinner(getCurrentState().flat());
   const status = winner ? `Winner: ${winner}` : `Next player: ${isXNext ? 'X' : 'O'}`;
 
   return (
