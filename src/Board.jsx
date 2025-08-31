@@ -4,7 +4,7 @@ const Board = () => {
   return (
     <div className="board">
       {/* Placeholder for board implementation */}
-      <h2>Tic-Tac-Toe Board</h2>
+      <h2></h2>
     </div>
   );
 };

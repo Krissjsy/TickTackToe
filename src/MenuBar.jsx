@@ -1,12 +1,10 @@
 import React from 'react';
 
-const MenuBar = ({ resetGame }) => {
+const MenuBar = ({ resetGame, setShowGoodbyeMessage }) => {
   const handleNewGame = () => resetGame();
 
   const handleExit = () => {
-    if (typeof window !== 'undefined') {
-      alert('Thanks for playing! Goodbye!');
-    }
+    setShowGoodbyeMessage(true);
   };
 
   const handleAbout = () => {
