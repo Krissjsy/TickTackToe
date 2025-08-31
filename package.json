@@ -29,6 +29,7 @@
   },
   "dependencies": {
     "@tailwindcss/postcss": "^4.1.12",
+    "@testing-library/jest-dom": "^6.8.0",
     "react": "^19.1.1",
     "react-dom": "^19.1.1"
   }

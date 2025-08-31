@@ -1,7 +1,14 @@
 import React, { useState } from 'react';
 import { getCurrentState, updateState, resetState } from '../gameState.js';
+import MenuBar from './MenuBar';
+import Board from './Board';
 
 const App = () => {
+  const resetGame = () => {
+    resetState();
+    setBoard(getCurrentState().flat());
+    setIsXNext(true);
+  };
   const [board, setBoard] = useState(getCurrentState().flat());
   const [isXNext, setIsXNext] = useState(true);
 
@@ -27,6 +34,8 @@ const App = () => {
 
   return (
     <div className="game">
+      <MenuBar resetGame={resetGame} />
+      <Board />
       <div className="status">{status}</div>
       <div className="board-row">
         {renderSquare(0)}
